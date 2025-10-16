@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi PWA Final</title>
+    <title>Mis Tareas PWA</title>
+    <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-        <h1>¡Mi PWA Funciona!</h1>
+        <h1>Mis Tareas PWA</h1>
+        <p id="status" style="color: white; background-color: red; padding: 5px; display: none;">
+            Estás sin conexión. Los datos se guardarán localmente.
+        </p>
     </header>
+
     <main>
-        <p>Componentes esenciales de una PWA.</p>
+        <form id="task-form">
+            <input type="text" id="task-title" placeholder="Título de la tarea" required>
+            <button type="submit">Guardar Tarea</button>
+        </form>
+
+        <h2>Tareas Pendientes</h2>
+        <ul id="task-list">
+            </ul>
+            
     </main>
+
+    <button id="subscribe-btn">Suscribirse a Notificaciones</button>
+
+    <script src="./db.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
